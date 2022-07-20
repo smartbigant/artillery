@@ -2,6 +2,7 @@ use crate::constants::*;
 use chrono::Duration;
 use std::net::{SocketAddr, ToSocketAddrs};
 
+#[derive(Debug, Clone)]
 pub struct MulticastServiceDiscoveryConfig {
     pub timeout_delta: Duration,
     pub seeking_addr: SocketAddr,
