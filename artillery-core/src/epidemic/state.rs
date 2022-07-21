@@ -391,9 +391,8 @@ impl ArtilleryEpidemic {
                     .unwrap()
             }
         } else {
-            error!("Mismatching cluster keys [{}-{}], ignoring message",
-                String::from_utf8(message.cluster_key).unwrap(), 
-                String::from_utf8(self.config.cluster_key).unwrap());
+            let message = format!("Mismatching cluster keys [{:?}-{:?}], ignoring message", message.cluster_key, self.config.cluster_key);
+            error!("{}",message);
         }
     }
 
