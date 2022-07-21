@@ -391,7 +391,7 @@ impl ArtilleryEpidemic {
                     .unwrap()
             }
         } else {
-            error!("Mismatching cluster keys, ignoring message");
+            error!("Mismatching cluster keys [{}-{}], ignoring message",String::from(message.cluster_key), String::from(self.config.cluster_key));
         }
     }
 
