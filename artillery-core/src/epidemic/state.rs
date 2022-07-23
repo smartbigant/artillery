@@ -376,10 +376,10 @@ impl ArtilleryEpidemic {
                     None
                 }
                 Payload(peer_id, msg) => {
-                    if let Some(member) = self.members.get_member(&peer_id) {
+                    if let Some(member) = self.members.get_member(&message.sender) {//FIXED ME
                         self.send_member_event(ArtilleryMemberEvent::Payload(member, msg));
                     } else {
-                        warn!("Got payload request from an unknown peer {}", peer_id);
+                        warn!("Got payload request from an unknown peer {}", message.sender);//FIXED ME
                     }
                     None
                 }
